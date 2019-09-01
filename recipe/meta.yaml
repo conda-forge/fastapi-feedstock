@@ -22,8 +22,8 @@ requirements:
     - pip
   run:
     - python  >=3.6
-    - starlette  >=0.11.1,<=0.12.7
-    - pydantic >=0.30,<0.32
+    - starlette  >=0.11.1,<=0.12.8
+    - pydantic >=0.32.2,<0.33
 
 test:
   imports:
