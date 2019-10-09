@@ -1,6 +1,7 @@
 --- a/pyproject.toml
 +++ /dev/null
-@@ -1,68 +0,0 @@-[build-system]
+@@ -1,68 +0,0 @@
+-[build-system]
 -requires = ["flit"]
 -build-backend = "flit.buildapi"
 -
