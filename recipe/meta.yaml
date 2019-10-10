@@ -1,5 +1,5 @@
 {% set name = "fastapi" %}
-{% set version = "0.38.1" %}
+{% set version = "0.42.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 273d099b7a8dd7cb1de166ea38216528406fbe042fb604d0025c00810e5ea858
+  sha256: 48cb522c1c993e238bfe272fbb18049cbd4bf5b9d6c0d4a4fa113cc790e8196c
   patches:
     - no-pyproject.toml.patch
 
@@ -22,7 +22,7 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - starlette >=0.11.1,<=0.12.8
+    - starlette =0.12.9
     - pydantic =0.32.2
 
 test:
