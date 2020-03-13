@@ -22,7 +22,7 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - starlette =0.12.9
+    - starlette =0.13.2
     - pydantic >=0.32.2,<2.0.0a0
 
 test:
