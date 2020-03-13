@@ -1,6 +1,6 @@
 --- a/pyproject.toml
 +++ /dev/null
-@@ -1,82 +0,0 @@
+@@ -1,90 +0,0 @@
 -[build-system]
 -requires = ["flit"]
 -build-backend = "flit.buildapi"
@@ -35,7 +35,7 @@
 -    "Topic :: Internet :: WWW/HTTP",
 -]
 -requires = [
--    "starlette >=0.12.9,<=0.12.9",
+-    "starlette ==0.13.2",
 -    "pydantic >=0.32.2,<2.0.0"
 -]
 -description-file = "README.md"
@@ -58,7 +58,11 @@
 -    "databases[sqlite]",
 -    "orjson",
 -    "async_exit_stack",
--    "async_generator"
+-    "async_generator",
+-    "python-multipart",
+-    "aiofiles",
+-    "ujson",
+-    "flask"
 -]
 -doc = [
 -    "mkdocs",
@@ -67,7 +71,11 @@
 -]
 -dev = [
 -    "pyjwt",
--    "passlib[bcrypt]"
+-    "passlib[bcrypt]",
+-    "autoflake",
+-    "flake8",
+-    "uvicorn",
+-    "graphene"
 -]
 -all = [
 -    "requests",
