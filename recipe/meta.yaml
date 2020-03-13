@@ -1,5 +1,5 @@
 {% set name = "fastapi" %}
-{% set version = "0.46.0" %}
+{% set version = "0.52.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6c9b919f2ed742d2ad78e6dce5ad1be761e67292b838ba114cb525ec784d10a1
+  sha256: 721b11d8ffde52c669f52741b6d9d761fe2e98778586f4cfd6f5e47254ba5016
   patches:
     - no-pyproject.toml.patch
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -33,7 +33,7 @@ about:
   home: https://github.com/tiangolo/fastapi
   license: MIT
   license_file: LICENSE
-  summary: 'FastAPI framework, high performance, easy to learn, fast to code, ready for production'
+  summary: FastAPI framework, high performance, easy to learn, fast to code, ready for production
   doc_url: https://github.com/tiangolo/fastapi
   dev_url: https://github.com/tiangolo/fastapi
 
