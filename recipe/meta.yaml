@@ -1,5 +1,5 @@
 {% set name = "fastapi" %}
-{% set version = "0.52.0" %}
+{% set version = "0.53.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 721b11d8ffde52c669f52741b6d9d761fe2e98778586f4cfd6f5e47254ba5016
+  sha256: c2d572370153a6b74d62a73252d75934e2bfdbb0f620fecfd489b5d4789f5c48
   patches:
     - no-pyproject.toml.patch
 
