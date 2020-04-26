@@ -117,5 +117,6 @@ Feedstock Maintainers
 =====================
 
 * [@dhirschfeld](https://github.com/dhirschfeld/)
+* [@synapticarbors](https://github.com/synapticarbors/)
 * [@tiangolo](https://github.com/tiangolo/)
 
