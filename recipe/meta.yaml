@@ -27,6 +27,10 @@ requirements:
 test:
   imports:
     - fastapi
+    - fastapi.dependencies
+    - fastapi.middleware
+    - fastapi.openapi
+    - fastapi.security
 
 about:
   home: https://github.com/tiangolo/fastapi
