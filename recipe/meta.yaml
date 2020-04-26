@@ -1,5 +1,5 @@
 {% set name = "fastapi" %}
-{% set version = "0.52.0" %}
+{% set version = "0.54.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,9 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 721b11d8ffde52c669f52741b6d9d761fe2e98778586f4cfd6f5e47254ba5016
-  patches:
-    - no-pyproject.toml.patch
+  sha256: 72f40f47e5235cb5cbbad1d4f97932ede6059290c07e12e9784028dcd1063d28
 
 build:
   noarch: python
@@ -20,6 +18,7 @@ requirements:
   host:
     - python >=3.6
     - pip
+    - flit
   run:
     - python >=3.6
     - starlette =0.13.2
@@ -28,6 +27,10 @@ requirements:
 test:
   imports:
     - fastapi
+    - fastapi.dependencies
+    - fastapi.middleware
+    - fastapi.openapi
+    - fastapi.security
 
 about:
   home: https://github.com/tiangolo/fastapi
@@ -41,3 +44,4 @@ extra:
   recipe-maintainers:
     - dhirschfeld
     - tiangolo
+    - synapticarbors
