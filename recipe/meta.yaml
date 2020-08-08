@@ -21,7 +21,7 @@ requirements:
     - flit
   run:
     - python >=3.6
-    - starlette =0.13.4
+    - starlette =0.13.6
     - pydantic >=0.32.2,<2.0.0a0
 
 test:
