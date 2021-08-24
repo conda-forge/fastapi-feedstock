@@ -123,4 +123,3 @@ Feedstock Maintainers
 * [@synapticarbors](https://github.com/synapticarbors/)
 * [@tiangolo](https://github.com/tiangolo/)
 
-
