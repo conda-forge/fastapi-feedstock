@@ -1,5 +1,5 @@
 {% set name = "fastapi" %}
-{% set version = "0.68.2" %}
+{% set version = "0.69.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 38526fc46bda73f7ec92033952677323c16061e70a91d15c95f18b11895da494
+  sha256: c5ebec13185878094d09e12508be5e8e1e002791dca716e20b5888bd95b25496
 
 build:
   noarch: python
@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.6.1
     - pip
     - flit
   run:
-    - python >=3.6
-    - starlette =0.14.2
+    - python >=3.6.1
+    - starlette =0.15.0
     - pydantic >=1.6.2,!=1.7,!=1.7.1,!=1.7.2,!=1.7.3,!=1.8,!=1.8.1,<2.0.0
 
 test:
