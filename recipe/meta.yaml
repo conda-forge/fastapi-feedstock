@@ -1,5 +1,5 @@
 {% set name = "fastapi" %}
-{% set version = "0.90.1" %}
+{% set version = "0.91.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d17e85deb3a350b731467e7bf035e158faffa381310a1b7356421e916fcc64f2
+  sha256: ff2fa93af3f2f982b07b5f96e8512565b3ef0e5f8f02469dbfd6bc27f6fd9a9e
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - hatchling
   run:
     - python >=3.7
-    - starlette >=0.22.0,<0.24.0
+    - starlette >=0.24.0,<0.25.0
     - pydantic >=1.6.2,!=1.7,!=1.7.1,!=1.7.2,!=1.7.3,!=1.8,!=1.8.1,<2.0.0
 
 test:
