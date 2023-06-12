@@ -1,5 +1,5 @@
 {% set name = "fastapi" %}
-{% set version = "0.96.1" %}
+{% set version = "0.97.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5c1d243030e63089ccfc0aec69c2da6d619943917727e8e82ee502358d5119bf
+  sha256: b53248ee45f64f19bb7600953696e3edf94b0f7de94df1e5433fc5c6136fa986
 
 build:
   noarch: python
