@@ -18,11 +18,12 @@ requirements:
   host:
     - python >=3.7
     - pip
-    - hatchling
+    - hatchling >=1.13.0
   run:
     - python >=3.7
     - starlette >=0.27.0,<0.28.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,<2.0.0
+    - typing-extensions >=4.5.0
 
 test:
   imports:
