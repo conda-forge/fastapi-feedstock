@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - pip
     - hatchling >=1.13.0
   run:
     - anyio >=3.7.1,<4.0.0
-    - python >=3.7
+    - python >=3.8
     - starlette >=0.27.0,<0.28.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
     - typing-extensions >=4.8.0
