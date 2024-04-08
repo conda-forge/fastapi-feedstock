@@ -11,16 +11,15 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - python >=3.8
-    - pip
     - hatchling >=1.13.0
+    - pip
   run:
-    - anyio >=3.7.1,<4.0.0
     - python >=3.8
     - starlette >=0.37.2,<0.38.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
