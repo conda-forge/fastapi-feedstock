@@ -1,5 +1,5 @@
 {% set name = "fastapi" %}
-{% set version = "0.110.3" %}
+{% set version = "0.111.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 555700b0159379e94fdbfc6bb66a0f1c43f4cf7060f25239af3d84b63a656626
+  sha256: b9db9dd147c91cb8b769f7183535773d8741dd46f9dc6676cd82eab510228cd7
 
 build:
   noarch: python
@@ -20,6 +20,14 @@ requirements:
     - pdm-backend
     - pip
   run:
+    - email_validator >=2.0.0
+    - fastapi-cli >=0.0.2
+    - httpx >=0.23.0
+    - jinja2 >=2.11.2
+    - orjson >=3.2.1
+    - python-multipart >=0.0.7
+    - ujson >=4.0.1,!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0
+    - uvicorn >=0.12.0
     - python >=3.8
     - starlette >=0.37.2,<0.38.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
