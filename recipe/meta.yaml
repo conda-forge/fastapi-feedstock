@@ -1,5 +1,5 @@
 {% set name = "fastapi" %}
-{% set version = "0.111.1" %}
+{% set version = "0.112.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ddd1ac34cb1f76c2e2d7f8545a4bcb5463bce4834e81abf0b189e0c359ab2413
+  sha256: d262bc56b7d101d1f4e8fc0ad2ac75bb9935fec504d2b7117686cec50710cf05
 
 build:
   noarch: python
@@ -23,7 +23,7 @@ requirements:
     - starlette >=0.37.2,<0.38.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
     - typing-extensions >=4.8.0
-    - fastapi-cli >=0.0.2
+    - fastapi-cli >=0.0.5
     - httpx >=0.23.0
     - jinja2 >=2.11.2
     - python-multipart >=0.0.7
@@ -40,12 +40,12 @@ test:
     - fastapi.security
 
 about:
-  home: https://github.com/tiangolo/fastapi
+  home: https://github.com/fastapi/fastapi
   license: MIT
   license_file: LICENSE
   summary: FastAPI framework, high performance, easy to learn, fast to code, ready for production
-  doc_url: https://github.com/tiangolo/fastapi
-  dev_url: https://github.com/tiangolo/fastapi
+  doc_url: https://github.com/fastapi/fastapi
+  dev_url: https://github.com/fastapi/fastapi
 
 extra:
   recipe-maintainers:

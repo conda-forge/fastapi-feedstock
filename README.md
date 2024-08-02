@@ -3,15 +3,15 @@ About fastapi-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fastapi-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/tiangolo/fastapi
+Home: https://github.com/fastapi/fastapi
 
 Package license: MIT
 
 Summary: FastAPI framework, high performance, easy to learn, fast to code, ready for production
 
-Development: https://github.com/tiangolo/fastapi
+Development: https://github.com/fastapi/fastapi
 
-Documentation: https://github.com/tiangolo/fastapi
+Documentation: https://github.com/fastapi/fastapi
 
 Current build status
 ====================
