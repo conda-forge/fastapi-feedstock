@@ -1,5 +1,5 @@
 {% set name = "fastapi" %}
-{% set version = "0.115.0" %}
+{% set version = "0.115.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f93b4ca3529a8ebc6fc3fcf710e5efa8de3df9b41570958abf1d97d843138004
+  sha256: 3995739e0b09fa12f984bce8fa9ae197b35d433750d3d312422d846e283697ee
 
 build:
   noarch: python
@@ -20,9 +20,9 @@ requirements:
     - pdm-backend
     - pip
   run:
-    - starlette >=0.37.2,<0.39.0
+    - typing_extensions >=4.8.0
+    - starlette >=0.37.2,<0.41.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
-    - typing-extensions >=4.8.0
     - fastapi-cli >=0.0.5
     - httpx >=0.23.0
     - jinja2 >=2.11.2
