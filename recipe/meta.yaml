@@ -23,7 +23,6 @@ requirements:
     - typing_extensions >=4.8.0
     - starlette >=0.37.2,<0.41.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
-    - typing-extensions >=4.8.0
     - fastapi-cli >=0.0.5
     - httpx >=0.23.0
     - jinja2 >=2.11.2
