@@ -41,18 +41,25 @@ requirements:
     - uvicorn >=0.12.0
 
 test:
+  requires:
+    - pip
   imports:
     - fastapi
     - fastapi.dependencies
     - fastapi.middleware
     - fastapi.openapi
     - fastapi.security
+  commands:
+    - pip check
+    - fastapi --version
+    - fastapi --help
 
 about:
-  home: https://fastapi.tiangolo.com
+  home: https://github.com/fastapi/fastapi
   license: MIT
   license_file: LICENSE
   summary: FastAPI framework, high performance, easy to learn, fast to code, ready for production
+  doc_url: https://fastapi.tiangolo.com
   dev_url: https://github.com/fastapi/fastapi
 
 extra:
