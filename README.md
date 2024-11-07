@@ -3,15 +3,13 @@ About fastapi-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fastapi-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/fastapi/fastapi
+Home: https://fastapi.tiangolo.com
 
 Package license: MIT
 
 Summary: FastAPI framework, high performance, easy to learn, fast to code, ready for production
 
 Development: https://github.com/fastapi/fastapi
-
-Documentation: https://github.com/fastapi/fastapi
 
 Current build status
 ====================
@@ -147,6 +145,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@bollwyvl](https://github.com/bollwyvl/)
 * [@dhirschfeld](https://github.com/dhirschfeld/)
 * [@synapticarbors](https://github.com/synapticarbors/)
 * [@tiangolo](https://github.com/tiangolo/)

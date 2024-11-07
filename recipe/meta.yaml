@@ -12,7 +12,7 @@ source:
   sha256: db653475586b091cb8b2fec2ac54a680ac6a158e07406e1abae31679e8826349
   patches:
     # this ships a `bin/fastapi` which says to install `fastapi-cli`
-    # but as this recipe already depends on `fastapi-cli`, it clobbers it
+    # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
     - 0000-no-broken-cli.patch
 
 build:
@@ -27,15 +27,17 @@ requirements:
     - pip
     - python {{ python_min }}
   run:
+    - python >={{ python_min }}
+    # [project.dependencies]
+    - starlette >=0.40.0,<0.42.0
+    - typing_extensions >=4.8.0
+    - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
+    # [project.optional-dependencies.standard]
     - email_validator >=2.0.0
     - fastapi-cli >=0.0.5
     - httpx >=0.23.0
     - jinja2 >=2.11.2
-    - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
-    - python >={{ python_min }}
     - python-multipart >=0.0.7
-    - starlette >=0.40.0,<0.42.0
-    - typing_extensions >=4.8.0
     - uvicorn >=0.12.0
 
 test:
