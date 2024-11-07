@@ -1,50 +1,66 @@
-{% set name = "fastapi" %}
 {% set version = "0.115.4" %}
 
+# handle undefined magic python variable
+{% set python_min = python_min | default("3.9") %}
+
 package:
-  name: {{ name|lower }}
+  name: fastapi
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/f/fastapi/fastapi-{{ version }}.tar.gz
   sha256: db653475586b091cb8b2fec2ac54a680ac6a158e07406e1abae31679e8826349
+  patches:
+    # this ships a `bin/fastapi` which says to install `fastapi-cli`
+    # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
+    - 0000-no-broken-cli.patch
 
 build:
   noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
 requirements:
   host:
-    - python >=3.8
     - pdm-backend
     - pip
+    - python {{ python_min }}.*
   run:
-    - typing_extensions >=4.8.0
+    - python >={{ python_min }}
+    # [project.dependencies]
     - starlette >=0.40.0,<0.42.0
+    - typing_extensions >=4.8.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
+    # [project.optional-dependencies.standard]
+    - email_validator >=2.0.0
     - fastapi-cli >=0.0.5
     - httpx >=0.23.0
     - jinja2 >=2.11.2
     - python-multipart >=0.0.7
-    - email_validator >=2.0.0
-    - uvicorn >=0.12.0
-    - python >=3.8
+    - uvicorn-standard >=0.12.0
 
 test:
+  requires:
+    - pip
+    - python ={{ python_min }}
   imports:
     - fastapi
     - fastapi.dependencies
     - fastapi.middleware
     - fastapi.openapi
     - fastapi.security
+  commands:
+    - pip check
+    - fastapi --version
+    - fastapi --help
 
 about:
   home: https://github.com/fastapi/fastapi
   license: MIT
   license_file: LICENSE
   summary: FastAPI framework, high performance, easy to learn, fast to code, ready for production
-  doc_url: https://github.com/fastapi/fastapi
+  doc_url: https://fastapi.tiangolo.com
   dev_url: https://github.com/fastapi/fastapi
 
 extra:
@@ -52,3 +68,4 @@ extra:
     - dhirschfeld
     - tiangolo
     - synapticarbors
+    - bollwyvl

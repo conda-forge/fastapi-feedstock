@@ -11,7 +11,7 @@ Summary: FastAPI framework, high performance, easy to learn, fast to code, ready
 
 Development: https://github.com/fastapi/fastapi
 
-Documentation: https://github.com/fastapi/fastapi
+Documentation: https://fastapi.tiangolo.com
 
 Current build status
 ====================
@@ -147,6 +147,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@bollwyvl](https://github.com/bollwyvl/)
 * [@dhirschfeld](https://github.com/dhirschfeld/)
 * [@synapticarbors](https://github.com/synapticarbors/)
 * [@tiangolo](https://github.com/tiangolo/)
