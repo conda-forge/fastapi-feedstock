@@ -1,4 +1,4 @@
-{% set version = "0.115.5" %}
+{% set version = "0.115.6" %}
 
 # handle undefined magic python variable
 {% set python_min = python_min | default("3.9") %}
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/f/fastapi/fastapi-{{ version }}.tar.gz
-  sha256: 0e7a4d0dc0d01c68df21887cce0945e72d3c48b9f4f79dfe7a7d53aa08fbb289
+  sha256: 9ec46f7addc14ea472958a96aae5b5de65f39721a46aaf5705c480d9a8b76654
   patches:
     # this ships a `bin/fastapi` which says to install `fastapi-cli`
     # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
