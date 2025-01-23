@@ -11,7 +11,7 @@ Summary: FastAPI framework, high performance, easy to learn, fast to code, ready
 
 Development: https://github.com/fastapi/fastapi
 
-Documentation: https://fastapi.tiangolo.com
+Documentation: https://fastapi.tiangolo.com/
 
 Current build status
 ====================
