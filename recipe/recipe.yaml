@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.115.9"
+  version: "0.115.10"
 
 package:
   name: fastapi
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/f/fastapi/fastapi-${{ version }}.tar.gz
-  sha256: 9d7da3b196c5eed049bc769f9475cd55509a112fbe031c0ef2f53768ae68d13f
+  sha256: 920cdc95c1c6ca073656deae80ad254512d131031c2d7759c87ae469572911ee
   patches:
     # this ships a `bin/fastapi` which says to install `fastapi-cli`
     # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
