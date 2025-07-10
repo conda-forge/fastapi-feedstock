@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.115.14"
+  version: "0.116.0"
 
 package:
   name: fastapi
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/f/fastapi/fastapi-${{ version }}.tar.gz
-  sha256: b1de15cdc1c499a4da47914db35d0e4ef8f1ce62b624e94e0e5824421df99739
+  sha256: 80dc0794627af0390353a6d1171618276616310d37d24faba6648398e57d687a
   patches:
     # this ships a `bin/fastapi` which says to install `fastapi-cli`
     # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
@@ -35,7 +35,7 @@ requirements:
     - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
     # [project.optional-dependencies.standard]
     - email_validator >=2.0.0
-    - fastapi-cli >=0.0.5
+    - fastapi-cli >=0.0.8
     - httpx >=0.23.0
     - jinja2 >=3.1.5
     - python-multipart >=0.0.18
