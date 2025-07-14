@@ -4,7 +4,7 @@ schema_version: 1
 context:
   version: "0.116.1"
 
-package:
+recipe:
   name: fastapi
   version: ${{ version }}
 
