@@ -11,16 +11,14 @@ package:
 source:
   url: https://pypi.org/packages/source/f/fastapi/fastapi-${{ version }}.tar.gz
   sha256: ed52cbf946abfd70c5a0dccb24673f0670deeb517a88b3544d03c2a6bf283143
-  patches:
-    # this ships a `bin/fastapi` which says to install `fastapi-cli`
-    # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
-    - 0000-no-broken-cli.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+  entry_points:
+    - fastapi = fastapi.cli:main
 
 requirements:
   host:
@@ -29,17 +27,9 @@ requirements:
     - python ${{ python_min }}.*
   run:
     - python >=${{ python_min }}
-    # [project.dependencies]
     - starlette >=0.40.0,<0.48.0
     - typing_extensions >=4.8.0
     - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
-    # [project.optional-dependencies.standard]
-    - email_validator >=2.0.0
-    - fastapi-cli >=0.0.8
-    - httpx >=0.23.0
-    - jinja2 >=3.1.5
-    - python-multipart >=0.0.18
-    - uvicorn-standard >=0.12.0
 
 tests:
   - python:
@@ -54,9 +44,24 @@ tests:
   - requirements:
       run:
         - python ${{ python_min }}.*
-    script:
-      - fastapi --version
-      - fastapi --help
+
+outputs:
+  - name: fastapi-core
+
+  - name: fastapi
+    requirements:
+      run:
+        - email_validator >=2.0.0
+        - fastapi-cli >=0.0.8
+        - httpx >=0.23.0
+        - jinja2 >=3.1.5
+        - python-multipart >=0.0.18
+        - uvicorn-standard >=0.12.0
+    tests:
+      - requirements:
+        script:
+          - fastapi --version
+          - fastapi --help
 
 about:
   license: MIT
@@ -72,3 +77,4 @@ extra:
     - tiangolo
     - synapticarbors
     - bollwyvl
+    - davidbrochart
