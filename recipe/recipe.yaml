@@ -46,9 +46,11 @@ tests:
         - python ${{ python_min }}.*
 
 outputs:
-  - name: fastapi-core
+  - package:
+      name: fastapi-core
 
-  - name: fastapi
+  - package:
+      name: fastapi
     requirements:
       run:
         - email_validator >=2.0.0
