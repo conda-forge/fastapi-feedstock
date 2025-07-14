@@ -20,17 +20,6 @@ build:
   entry_points:
     - fastapi = fastapi.cli:main
 
-requirements:
-  host:
-    - pdm-backend
-    - pip
-    - python ${{ python_min }}.*
-  run:
-    - python >=${{ python_min }}
-    - starlette >=0.40.0,<0.48.0
-    - typing_extensions >=4.8.0
-    - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
-
 tests:
   - python:
       pip_check: true
@@ -48,11 +37,33 @@ tests:
 outputs:
   - package:
       name: fastapi-core
+    requirements:
+      host:
+        - pdm-backend
+        - pip
+        - python ${{ python_min }}.*
+      run:
+        - python >=${{ python_min }}
+        # [project.dependencies]
+        - starlette >=0.40.0,<0.48.0
+        - typing_extensions >=4.8.0
+        - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
+
 
   - package:
       name: fastapi
     requirements:
+      host:
+        - pdm-backend
+        - pip
+        - python ${{ python_min }}.*
       run:
+        - python >=${{ python_min }}
+        # [project.dependencies]
+        - starlette >=0.40.0,<0.48.0
+        - typing_extensions >=4.8.0
+        - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
+        # [project.optional-dependencies.standard]
         - email_validator >=2.0.0
         - fastapi-cli >=0.0.8
         - httpx >=0.23.0
