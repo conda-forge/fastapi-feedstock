@@ -95,6 +95,7 @@ about:
   documentation: https://fastapi.tiangolo.com
 
 extra:
+  feedstock-name: fastapi
   recipe-maintainers:
     - dhirschfeld
     - tiangolo
