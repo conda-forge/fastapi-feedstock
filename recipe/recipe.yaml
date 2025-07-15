@@ -3,8 +3,9 @@ schema_version: 1
 
 context:
   version: "0.116.1"
+  python_check_max: "3.13"
 
-package:
+recipe:
   name: fastapi
   version: ${{ version }}
 
@@ -15,48 +16,98 @@ source:
     # this ships a `bin/fastapi` which says to install `fastapi-cli`
     # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
     - 0000-no-broken-cli.patch
-
 build:
-  number: 0
+  number: 1
   noarch: python
-  script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
-requirements:
-  host:
-    - pdm-backend
-    - pip
-    - python ${{ python_min }}.*
-  run:
-    - python >=${{ python_min }}
-    # [project.dependencies]
-    - starlette >=0.40.0,<0.48.0
-    - typing_extensions >=4.8.0
-    - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
-    # [project.optional-dependencies.standard]
-    - email_validator >=2.0.0
-    - fastapi-cli >=0.0.8
-    - httpx >=0.23.0
-    - jinja2 >=3.1.5
-    - python-multipart >=0.0.18
-    - uvicorn-standard >=0.12.0
-
-tests:
-  - python:
-      pip_check: true
-      python_version: ${{ python_min }}.*
-      imports:
-        - fastapi
-        - fastapi.dependencies
-        - fastapi.middleware
-        - fastapi.openapi
-        - fastapi.security
-  - requirements:
-      run:
+outputs:
+  - package:
+      name: fastapi-core
+    build:
+      script:
+        - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+      python:
+        entry_points:
+          - fastapi = fastapi.cli:main
+    requirements:
+      host:
+        - pdm-backend
+        - pip
         - python ${{ python_min }}.*
-    script:
-      - fastapi --version
-      - fastapi --help
+      run:
+        - python >=${{ python_min }}
+        # [project.dependencies]
+        - starlette >=0.40.0,<0.48.0
+        - typing_extensions >=4.8.0
+        - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
+      run_constraints:
+        # [project.optional-dependencies.standard]
+        - email_validator >=2.0.0
+        - fastapi-cli >=0.0.8
+        - httpx >=0.23.0
+        - jinja2 >=3.1.5
+        - python-multipart >=0.0.18
+        - uvicorn-standard >=0.12.0
+    tests:
+      - python:
+          imports: fastapi
+          pip_check: true
+          python_version:
+            - ${{ python_min }}.*
+            - ${{ python_check_max }}.*
+      - requirements:
+          run:
+            - python ${{ python_min }}.*
+        script:
+          - python -c "from importlib.metadata import version; v = version('fastapi'); print(v); assert v == '${{ version }}'"
+
+    about:
+      license: MIT
+      license_file: LICENSE
+      summary: FastAPI framework, high performance, easy to learn, fast to code, ready for production (core dependencies only)
+      homepage: https://github.com/fastapi/fastapi
+      repository: https://github.com/fastapi/fastapi
+      documentation: https://fastapi.tiangolo.com
+
+  - package:
+      name: fastapi
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - ${{ pin_subpackage("fastapi-core", exact=True) }}
+        # [project.optional-dependencies.standard]
+        - email_validator
+        - fastapi-cli
+        - httpx
+        - jinja2
+        - python-multipart
+        - uvicorn-standard
+    tests:
+      - python:
+          imports:
+            - fastapi
+            - fastapi.dependencies
+            - fastapi.middleware
+            - fastapi.openapi
+            - fastapi.security
+          pip_check: true
+          python_version:
+            - ${{ python_min }}.*
+            - ${{ python_check_max }}.*
+      - requirements:
+          run:
+            - python ${{ python_min }}.*
+        script:
+          - fastapi --version
+          - fastapi --help
+    about:
+      license: MIT
+      license_file: LICENSE
+      summary: FastAPI framework, high performance, easy to learn, fast to code, ready for production (with [standard])
+      homepage: https://github.com/fastapi/fastapi
+      repository: https://github.com/fastapi/fastapi
+      documentation: https://fastapi.tiangolo.com
 
 about:
   license: MIT
@@ -67,8 +118,10 @@ about:
   documentation: https://fastapi.tiangolo.com
 
 extra:
+  feedstock-name: fastapi
   recipe-maintainers:
     - dhirschfeld
     - tiangolo
     - synapticarbors
     - bollwyvl
+    - davidbrochart
