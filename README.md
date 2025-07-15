@@ -32,6 +32,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-fastapi-green.svg)](https://anaconda.org/conda-forge/fastapi) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/fastapi.svg)](https://anaconda.org/conda-forge/fastapi) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/fastapi.svg)](https://anaconda.org/conda-forge/fastapi) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/fastapi.svg)](https://anaconda.org/conda-forge/fastapi) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-fastapi--core-green.svg)](https://anaconda.org/conda-forge/fastapi-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/fastapi-core.svg)](https://anaconda.org/conda-forge/fastapi-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/fastapi-core.svg)](https://anaconda.org/conda-forge/fastapi-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/fastapi-core.svg)](https://anaconda.org/conda-forge/fastapi-core) |
 
 Installing fastapi
 ==================
@@ -43,16 +44,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `fastapi` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `fastapi, fastapi-core` can be installed with `conda`:
 
 ```
-conda install fastapi
+conda install fastapi fastapi-core
 ```
 
 or with `mamba`:
 
 ```
-mamba install fastapi
+mamba install fastapi fastapi-core
 ```
 
 It is possible to list all of the versions of `fastapi` available on your platform with `conda`:
@@ -148,6 +149,7 @@ Feedstock Maintainers
 =====================
 
 * [@bollwyvl](https://github.com/bollwyvl/)
+* [@davidbrochart](https://github.com/davidbrochart/)
 * [@dhirschfeld](https://github.com/dhirschfeld/)
 * [@synapticarbors](https://github.com/synapticarbors/)
 * [@tiangolo](https://github.com/tiangolo/)
