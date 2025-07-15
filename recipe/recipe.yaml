@@ -52,6 +52,13 @@ outputs:
           python_version:
             - ${{ python_min }}.*
             - ${{ python_check_max }}.*
+    about:
+      license: MIT
+      license_file: LICENSE
+      summary: FastAPI framework, high performance, easy to learn, fast to code, ready for production (core dependencies only)
+      homepage: https://github.com/fastapi/fastapi
+      repository: https://github.com/fastapi/fastapi
+      documentation: https://fastapi.tiangolo.com
 
   - package:
       name: fastapi
@@ -85,6 +92,13 @@ outputs:
         script:
           - fastapi --version
           - fastapi --help
+    about:
+      license: MIT
+      license_file: LICENSE
+      summary: FastAPI framework, high performance, easy to learn, fast to code, ready for production (with [standard])
+      homepage: https://github.com/fastapi/fastapi
+      repository: https://github.com/fastapi/fastapi
+      documentation: https://fastapi.tiangolo.com
 
 about:
   license: MIT
