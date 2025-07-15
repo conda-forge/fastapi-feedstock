@@ -37,6 +37,14 @@ outputs:
         - starlette >=0.40.0,<0.48.0
         - typing_extensions >=4.8.0
         - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
+      run_constraints:
+        # [project.optional-dependencies.standard]
+        - email_validator >=2.0.0
+        - fastapi-cli >=0.0.8
+        - httpx >=0.23.0
+        - jinja2 >=3.1.5
+        - python-multipart >=0.0.18
+        - uvicorn-standard >=0.12.0
     tests:
       - python:
           imports: fastapi
@@ -53,12 +61,12 @@ outputs:
       run:
         - ${{ pin_subpackage("fastapi-core", exact=True) }}
         # [project.optional-dependencies.standard]
-        - email_validator >=2.0.0
-        - fastapi-cli >=0.0.8
-        - httpx >=0.23.0
-        - jinja2 >=3.1.5
-        - python-multipart >=0.0.18
-        - uvicorn-standard >=0.12.0
+        - email_validator
+        - fastapi-cli
+        - httpx
+        - jinja2
+        - python-multipart
+        - uvicorn-standard
     tests:
       - python:
           imports:
