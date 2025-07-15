@@ -1,0 +1,14 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index 14e0ddb..d6a5867 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -80,9 +80,6 @@ all = [
+     "pydantic-extra-types >=2.0.0",
+ ]
+ 
+-[project.scripts]
+-fastapi = "fastapi.cli:main"
+-
+ [tool.pdm]
+ distribution = true
+ 
