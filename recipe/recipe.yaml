@@ -44,7 +44,7 @@ outputs:
         # [project.optional-dependencies.standard]
         - email_validator >=2.0.0
         - fastapi-cli >=0.0.8
-        - httpx >=0.23.0
+        - httpx >=0.23.0,<1.0.0
         - jinja2 >=3.1.5
         - python-multipart >=0.0.18
         - uvicorn-standard >=0.12.0
