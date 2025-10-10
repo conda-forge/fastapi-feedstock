@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   version: "0.118.3"
-  python_check_max: "3.13"
+  python_check_max: "3.14"
 
 recipe:
   name: fastapi
