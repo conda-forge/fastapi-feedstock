@@ -3,9 +3,7 @@ schema_version: 1
 
 context:
   version: "0.119.0"
-  # try after uvloop/uvicorn are available for python 3.14
-  # python_check_max: "3.14"
-  python_check_max: "3.13"
+  python_check_max: "3.14"
 
 recipe:
   name: fastapi
@@ -19,7 +17,7 @@ source:
     # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
     - 0000-no-broken-cli.patch
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
