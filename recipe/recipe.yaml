@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.125.0"
+  version: "0.126.0"
   python_check_max: "3.14"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/f/fastapi/fastapi-${{ version }}.tar.gz
-  sha256: 16b532691a33e2c5dee1dac32feb31dc6eb41a3dd4ff29a95f9487cb21c054c0
+  sha256: f099fceb2a6d56dd21c59c4543d00be123dedacff869e76ae31ba3c0f963e2cd
   patches:
     # this ships a `bin/fastapi` which says to install `fastapi-cli`
     # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
@@ -40,13 +40,15 @@ outputs:
         - annotated-doc >=0.0.2
         - starlette >=0.40.0,<0.51.0
         - typing_extensions >=4.8.0
-        - pydantic >=1.7.4,!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0
+        - pydantic >=2.7.0
       run_constraints:
         # [project.optional-dependencies.standard]
         - email_validator >=2.0.0
         - fastapi-cli >=0.0.8
         - httpx >=0.23.0,<1.0.0
         - jinja2 >=3.1.5
+        - pydantic-extra-types >=2.0.0
+        - pydantic-settings >=2.0.0
         - python-multipart >=0.0.18
         - uvicorn-standard >=0.12.0
     tests:
@@ -82,6 +84,8 @@ outputs:
         - fastapi-cli
         - httpx
         - jinja2
+        - pydantic-settings
+        - pydantic-extra-types
         - python-multipart
         - uvicorn-standard
     tests:
