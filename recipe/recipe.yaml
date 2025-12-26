@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.127.0"
+  version: "0.127.1"
   python_check_max: "3.14"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/f/fastapi/fastapi-${{ version }}.tar.gz
-  sha256: 5a9246e03dcd1fdb19f1396db30894867c1d630f5107dc167dcbc5ed1ea7d259
+  sha256: 946a87ee5d931883b562b6bada787d6c8178becee2683cb3f9b980d593206359
   patches:
     # this ships a `bin/fastapi` which says to install `fastapi-cli`
     # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
