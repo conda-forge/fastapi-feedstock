@@ -17,7 +17,7 @@ source:
     # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
     - 0000-no-broken-cli.patch
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -26,9 +26,6 @@ outputs:
     build:
       script:
         - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
-      python:
-        entry_points:
-          - fastapi = fastapi.cli:main
     requirements:
       host:
         - pdm-backend
@@ -62,7 +59,12 @@ outputs:
           run:
             - python ${{ python_min }}.*
         script:
-          - python -c "from importlib.metadata import version; v = version('fastapi'); print(v); assert v == '${{ version }}'"
+          interpreter: python
+          content: |-
+            from importlib.metadata import version
+            v = version('fastapi')
+            print(v)
+            assert v == '${{ version }}'
 
     about:
       license: MIT
