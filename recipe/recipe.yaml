@@ -37,6 +37,7 @@ outputs:
         - annotated-doc >=0.0.2
         - starlette >=0.40.0,<0.51.0
         - typing_extensions >=4.8.0
+        - typing-inspection >=0.4.2
         - pydantic >=2.7.0
       run_constraints:
         # [project.optional-dependencies.standard]
