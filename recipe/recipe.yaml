@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.128.2"
+  version: "0.128.3"
   python_check_max: "3.14"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/f/fastapi/fastapi-${{ version }}.tar.gz
-  sha256: 7db9eb891866ac3a08e03f844b99e343a2c1cc41247e68e006c90b38d2464ea1
+  sha256: ed99383fd96063447597d5aa2a9ec3973be198e3b4fc10c55f15c62efdb21c60
   patches:
     # this ships a `bin/fastapi` which says to install `fastapi-cli`
     # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
@@ -35,7 +35,7 @@ outputs:
         - python >=${{ python_min }}
         # [project.dependencies]
         - annotated-doc >=0.0.2
-        - starlette >=0.40.0,<0.51.0
+        - starlette >=0.40.0,<1.0.0
         - typing_extensions >=4.8.0
         - typing-inspection >=0.4.2
         - pydantic >=2.7.0
