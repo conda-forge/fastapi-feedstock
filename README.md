@@ -7,7 +7,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fastapi-feedsto
 About fastapi
 -------------
 
-Home: https://github.com/fastapi/fastapi
+Home: https://pypi.org/project/fastapi
 
 Package license: MIT
 
@@ -20,7 +20,7 @@ Documentation: https://fastapi.tiangolo.com/
 About fastapi-core
 ------------------
 
-Home: https://github.com/fastapi/fastapi
+Home: https://pypi.org/project/fastapi
 
 Package license: MIT
 
