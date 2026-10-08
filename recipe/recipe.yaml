@@ -55,6 +55,7 @@ outputs:
         - uvicorn-standard >=0.12.0
     tests:
       - package_contents:
+          strict: true
           site_packages:
             - fastapi/**
             - fastapi-${{ version }}.dist-info/**
