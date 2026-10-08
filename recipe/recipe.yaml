@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.142.2"
+  version: "0.142.4"
   python_check_max: "3.14"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/f/fastapi/fastapi-${{ version }}.tar.gz
-  sha256: 06366626f2e70576367714d9ab2fe8472e6c8456dba69b399f9f797ab5e92570
+  sha256: 7fe2e254a0a948b88f432b02b8f627463285248233bba0998ed9640191e2ff57
   patches:
     # this ships a `bin/fastapi` which says to install `fastapi-cli`
     # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
@@ -55,6 +55,7 @@ outputs:
         - uvicorn-standard >=0.12.0
     tests:
       - package_contents:
+          strict: true
           site_packages:
             - fastapi/**
             - fastapi-${{ version }}.dist-info/**
