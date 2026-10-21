@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.154.0"
+  version: "0.156.4"
   python_check_max: "3.15"
 
 recipe:
@@ -11,7 +11,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/f/fastapi/fastapi-${{ version }}.tar.gz
-  sha256: 8989cd9bf0a368d465b80eb696e880def8363be0ed2441518ef3c4f76b47c0cd
+  sha256: e7dd3889a6d6f0c2976a89d6fb34be92fb3ee77bb5f9d1a40e68e9af09c96968
   patches:
     # this ships a `bin/fastapi` which says to install `fastapi-cli`
     # but as this recipe already depends on `fastapi-cli`, it clobbers the working one
@@ -46,6 +46,7 @@ outputs:
         - fastapi-cli >=0.0.32
         - fastar >=0.9.0
         - httpx >=0.23.0,<1.0.0
+        - httpx2 >=2.0.0
         - jinja2 >=3.1.5
         - opentelemetry-exporter-otlp-proto-http >=1.44.0
         - opentelemetry-sdk >=1.44.0
@@ -90,6 +91,7 @@ outputs:
         - fastapi-cli
         - fastar
         - httpx
+        - httpx2
         - jinja2
         - opentelemetry-exporter-otlp-proto-http
         - opentelemetry-sdk
