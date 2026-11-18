@@ -38,7 +38,7 @@ outputs:
         - anyio >=4.1.0
         - opentelemetry-api >=1.44.0
         - pydantic >=2.9.0
-        - starlette >=0.46.0
+        - starlette >=1.6.0
         - typing_extensions >=4.8.0
         - typing-inspection >=0.4.2
       run_constraints:
